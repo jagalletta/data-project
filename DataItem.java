@@ -1,6 +1,7 @@
 //class definition for public class DataItem
 public class DataItem	{
 	//the DataItem class has four fields
+	//TODO support date/calendar objects in date attribute
 	public String date;
 	public String name;
 	public String company;
