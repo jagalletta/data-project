@@ -1,35 +1,34 @@
+import java.util.*;
 //class definition for public class DataItem
-public class DataItem	{
+public class DataItem	implements Comparable<DataItem>{
 	//the DataItem class has four fields
-	//TODO support date/calendar objects in date attribute
 	public String date;
 	public String name;
 	public String company;
 	public String color;
 
+	@Override
+	public int compareTo(DataItem that){
+		return color.compareTo(that.color);
+	}
+
+	public static void sortByColor(List<DataItem> dataItems){
+		Collections.sort(dataItems);
+	}
+
 	//the DataItem class has one constructor
-	public DataItem(String itemDate, String itemName, String itemCompany, String itemColor){
+	DataItem(String itemDate, String itemName, String itemCompany, String itemColor){
 			this.date = itemDate;
 			this.name = itemName;
 			this.company = itemCompany;
 			this.color = itemColor;
 	}
 
-	public String getDate (){
-		return this.date;
+	public void printItem (){
+		System.out.println("Date: " + this.date);
+		System.out.println("Name: " + this.name);
+		System.out.println("Company: " + this.company);
+		System.out.println("Color: " + this.color);
 	}
-
-	public String getName (){
-		return this.name;
-	}
-
-	public String getCompany (){
-		return this.company;
-	}
-
-	public String getColor (){
-		return this.color;
-	}
-
-	//TODO define enumurator methods
+	//decided to keep attributes public and eliminate get functions
 }
